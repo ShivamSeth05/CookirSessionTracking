@@ -25,10 +25,12 @@ public class CustomerLogServlet extends HttpServlet{
 			rd.include(req, res);
 		}
 		else {			
-//			Cookie ck=new Cookie("",);
-			pw.println("Welcome"+cb.getCname());
+			
+			pw.println("Welcome "+cb.getCname()+"<br>");
 			RequestDispatcher rd =req.getRequestDispatcher("link1.html");
 			rd.include(req, res);
+			Cookie ck = new Cookie("cname",cb.getCname());
+			res.addCookie(ck);
 		}
 	}
 }
